@@ -1,7 +1,10 @@
+@import './utils/variables';
+@import './utils/reset';
 @import './utils/vis-hidden';
 
 @import './components/conteiner';
 @import './components/section';
+@import './components/body';
 
 @import './layout/header';
 @import './layout/hero';

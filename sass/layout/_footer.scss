@@ -48,10 +48,6 @@
 .address-list .link:focus {
   color: var(--accent-color);
 }
-.link,
-.street {
-  text-decoration: none; /* Убираем нижнее подчеркивание ссылок*/
-}
 
 .address-list {
   font-style: normal; /* Убираем  курсив в ссылках footer */

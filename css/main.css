@@ -1,4 +1,89 @@
 @charset "UTF-8";
+:root {
+  --primary-text-color: #757575;
+  /*Цвет основного текста  */
+  --title-text-color: #212121;
+  /*Цвет заголовков */
+  --accent-color: #2196f3;
+  /* Цвет акцента  */
+  --color-modal-button: #188ce8;
+  /*Цвет кнопки модалки*/
+  --address-text-color: #ffffff;
+  /* Цвет физического адреса  */
+  --hero-text-color: #ffffff;
+  /* Цвет текста секции hero */
+  --footer-cont-text-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  );
+  /* Цвет контактов в Футере mail, tel, rgba(255, 255, 255, 0.6) */
+  --footer-logo-span-color: #ffffff;
+  /*Цвет span в логотипе footer */
+  --primary-bg-color: #ffffff;
+  /* Основной цвет фона body background  */
+  --secondary-bg-color: #f5f4fa;
+  /* Вторичный цвет фона */
+  --hero-bg-color: #2f303a;
+  /* Цвет фона hero  */
+  --footer-bg-color: #2f303a;
+  /* Цвет фона footer */
+  --header-line-color: #ececec;
+  /* Цвет линии в header !!!*/
+  --btn-text-color: #ffffff;
+  /*Цвет текста в кнопке*/
+  --btn-accent-color: #2196f3;
+  /* Цвет акцента кнопки */
+  --btn-primary-color: #f5f4fa;
+  /*Основной цвет кнопки*/
+  --color-border-portfolio: #eeeeee;
+  /* Цвет рамки в карточки портфолио*/
+  --background-feature-icon: #f5f4fa;
+  /*Цвет фона иконок Особенности*/
+  --color-social-client-icon: #afb1b8;
+  /* Основной цвет иконок соц. и клиентов */
+  --accent-color-icon: #ffffff;
+  /*Цвет акцента соц сетей */
+  /*--- Переменные анимации---*/
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.list {
+  list-style: none;
+}
+
+.link,
+.street {
+  text-decoration: none;
+  /* Убираем нижнее подчеркивание ссылок*/
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -22,6 +107,15 @@
 
 .section {
   padding: 94px 0px;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-family: "Roboto", Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
 }
 
 .header {
@@ -473,12 +567,6 @@
 .address-list .link:hover,
 .address-list .link:focus {
   color: var(--accent-color);
-}
-
-.link,
-.street {
-  text-decoration: none;
-  /* Убираем нижнее подчеркивание ссылок*/
 }
 
 .address-list {
