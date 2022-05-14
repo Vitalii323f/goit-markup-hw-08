@@ -1,0 +1,71 @@
+/*------Создаем социальные ссылки команды------*/
+.team-social__list {
+  display: flex;
+}
+.team-social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--color-social-client-icon);
+
+  transition-property: background-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    fill: var(--accent-color-icon);
+  }
+}
+
+/*-----Делаем отступ через селектор соседа-----*/
+.team-social__item + .team-social__item {
+  margin-left: 10px;
+}
+
+/*------Создаем социальные ссылки footer------*/
+
+.footer-social {
+  margin-right: 93px;
+}
+.social-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  margin-bottom: 20px;
+  padding-top: 9px;
+}
+
+.footer-social-list {
+  display: flex;
+}
+.footer-social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--accent-color-icon);
+
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
+}
+
+/*-----Делаем отступ через селектор соседа-----*/
+.footer-social-item + .footer-social-item {
+  margin-left: 10px;
+}

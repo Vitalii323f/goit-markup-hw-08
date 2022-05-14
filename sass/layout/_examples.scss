@@ -2,46 +2,57 @@
 
 .examples {
   padding-top: 0px;
-}
-.examples__title {
-  color: var(--title-text-color);
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  margin-bottom: 50px;
-  /*outline: 1px solid #f11014;*/
-}
-/* Оборачиваем элементы flex контейнер*/
+  &__title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  &__text {
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    left: 0;
+    bottom: 0;
 
-.examples__list {
-  display: flex;
-}
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 27px 0px;
+    color: var(--hero-text-color);
 
-/* Текст с фоном спозиционирован поверх изображения*/
-.examples__item {
-  position: relative;
-}
+    background: rgba(47, 48, 58, 0.8);
+  }
+  &__text {
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    left: 0;
+    bottom: 0;
 
-.examples__text {
-  position: absolute;
-  width: 370px;
-  height: 70px;
-  left: 0;
-  bottom: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 27px 0px;
+    color: var(--hero-text-color);
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  padding: 27px 0px;
-  color: var(--hero-text-color);
-
-  background: rgba(47, 48, 58, 0.8);
-}
-
-.examples__item:not(:last-child) {
-  margin-right: 30px;
+    background: rgba(47, 48, 58, 0.8);
+  }
 }

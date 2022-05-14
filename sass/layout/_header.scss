@@ -6,113 +6,86 @@
 
   width: 100%;
   border-bottom: 1px solid var(--header-line-color);
-}
-
-/* Задаем цвет логотипа */
-.logo {
-  color: var(--accent-color);
-  font-family: 'Raleway';
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  text-decoration: none; /* Убираем нижнее подчеркивание ссылок*/
-}
-.header__logo {
-  margin-right: 93px;
-}
-
-.logo__text--black {
-  color: var(--title-text-color);
+  & .container {
+    display: flex;
+    align-items: center;
+  }
 }
 
 /*Создаем Flex контейнер Header*/
-.header .container {
+/*.header .container {
   display: flex;
   align-items: center;
-}
+}*/
 .site-nav {
   display: flex;
-}
-.site-nav__item:not(:last-child) {
-  margin-right: 50px;
-}
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+  &__link {
+    color: var(--title-text-color);
+    padding: 30px 0px; /*Задали padding ,тем самым увеличили кликабельность ссылок*/
+    display: block;
 
-/* Добавляем ссылкам наведение и фокус */
-.site-nav__link {
-  color: var(--title-text-color);
-  padding: 30px 0px; /*Задали padding ,тем самым увеличили кликабельность ссылок*/
-  display: block;
+    transition-property: color;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+    &:hover,
+    &:focus {
+      color: var(--accent-color);
+    }
+    &--current {
+      color: var(--accent-color);
+    }
+    &--current {
+      position: relative;
+      &::after {
+        content: '';
 
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-.site-nav__link:hover,
-.site-nav__link:focus {
-  color: var(--accent-color);
-}
-.site-nav__link--current {
-  color: var(--accent-color); /* Делает акцент на активную страницу */
-}
-/* Сделал нижнее подчеркивание активной страницы*/
-.site-nav__link--current {
-  position: relative;
-}
+        position: absolute;
+        left: 0px;
+        bottom: -1px;
 
-.site-nav__link--current::after {
-  content: '';
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
 
-  position: absolute;
-  left: 0px;
-  bottom: -1px;
-
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-
-  background-color: var(--accent-color);
+        background-color: var(--accent-color);
+      }
+    }
+  }
 }
 
 .contact-nav {
   display: flex;
   margin-left: auto;
+  &__item + &__item {
+    margin-left: 50px;
+  }
+  &__icon {
+    fill: var(--primary-text-color);
+    margin-right: 10px;
+    transition-property: fill;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+  }
 }
 .contact-nav__link {
+  display: flex;
+  align-items: center;
+
   color: var(--primary-text-color);
 
   transition-property: fill, color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+  &:hover .contact-nav__icon,
+  &:focus .contact-nav__icon {
+    fill: currentColor;
+  }
 }
 
-.contact-nav__link:hover,
-.contact-nav__link:focus {
-  color: var(--accent-color);
-}
-/*Отступы тел и почта двумя способами*/
-.contact-nav__item + .contact-nav__item {
-  margin-left: 50px;
-}
-/*.contact-nav-item:not(:last-child) {
-    margin-right: 50px;
-  }*/
-
-/*---Центрируем иконки конверт и телефон---*/
-.contact-nav__link {
-  display: flex;
-  align-items: center;
-}
-
-/*Задаем цвет иконок конверт и телефон */
-.contact-nav__icon {
-  fill: var(--primary-text-color);
-  margin-right: 10px;
-  transition-property: fill;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-/* Иконка наследует цвет ссылки при hover*/
-.contact-nav__link:hover .contact-nav__icon,
-.contact-nav__link:focus .contact-nav__icon {
-  fill: currentColor;
-}

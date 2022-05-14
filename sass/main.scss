@@ -5,6 +5,11 @@
 @import './components/conteiner';
 @import './components/section';
 @import './components/body';
+@import './components/logo';
+@import './components/buttons';
+@import './components/project-overlay';
+@import './components/social-link';
+@import './components/backdrop-modal';
 
 @import './layout/header';
 @import './layout/hero';
@@ -13,5 +18,4 @@
 @import './layout/team';
 @import './layout/сlients';
 @import './layout/footer';
-@import './layout/backdrop-modal';
-@import './layout/portfolio';
+@import './layout/project';
