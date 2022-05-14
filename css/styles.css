@@ -89,19 +89,29 @@ body {
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none; /* Убираем нижнее подчеркивание ссылок*/
-
+}
+.header__logo {
   margin-right: 93px;
 }
 
-.logo-span {
+.logo__text--black {
   color: var(--title-text-color);
 }
-.footer .logo-span {
-  color: var(--footer-logo-span-color);
+
+/*Создаем Flex контейнер Header*/
+.header .container {
+  display: flex;
+  align-items: center;
+}
+.site-nav {
+  display: flex;
+}
+.site-nav__item:not(:last-child) {
+  margin-right: 50px;
 }
 
 /* Добавляем ссылкам наведение и фокус */
-.site-nav .link {
+.site-nav__link {
   color: var(--title-text-color);
   padding: 30px 0px; /*Задали padding ,тем самым увеличили кликабельность ссылок*/
   display: block;
@@ -110,19 +120,19 @@ body {
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav__link:hover,
+.site-nav__link:focus {
   color: var(--accent-color);
 }
-.site-nav .link.current {
+.site-nav__link--current {
   color: var(--accent-color); /* Делает акцент на активную страницу */
 }
 /* Сделал нижнее подчеркивание активной страницы*/
-.link.current {
+.site-nav__link--current {
   position: relative;
 }
 
-.link.current::after {
+.site-nav__link--current::after {
   content: '';
 
   position: absolute;
@@ -136,37 +146,24 @@ body {
   background-color: var(--accent-color);
 }
 
-.contact-nav .link {
+.contact-nav {
+  display: flex;
+  margin-left: auto;
+}
+.contact-nav__link {
   color: var(--primary-text-color);
 
   transition-property: fill, color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
-.contact-nav .link:hover,
-.contact-nav .link:focus {
+
+.contact-nav__link:hover,
+.contact-nav__link:focus {
   color: var(--accent-color);
 }
-
-/*Создаем Flex контейнер Header*/
-.header .container {
-  display: flex;
-  align-items: center;
-}
-.site-nav {
-  display: flex;
-}
-.contact-nav {
-  display: flex;
-  margin-left: auto;
-}
-
-.site-nav-item:not(:last-child) {
-  margin-right: 50px;
-}
-
 /*Отступы тел и почта двумя способами*/
-.contact-nav .contact-nav-item + .contact-nav-item {
+.contact-nav__item + .contact-nav__item {
   margin-left: 50px;
 }
 /*.contact-nav-item:not(:last-child) {
@@ -174,13 +171,13 @@ body {
 }*/
 
 /*---Центрируем иконки конверт и телефон---*/
-.contact-nav-item .link {
+.contact-nav__link {
   display: flex;
   align-items: center;
 }
 
 /*Задаем цвет иконок конверт и телефон */
-.contact-icon {
+.contact-nav__icon {
   fill: var(--primary-text-color);
   margin-right: 10px;
   transition-property: fill;
@@ -188,15 +185,15 @@ body {
   transition-timing-function: var(--transition-timing-function);
 }
 /* Иконка наследует цвет ссылки при hover*/
-.contact-nav .link:hover .contact-icon,
-.contact-nav .link:focus .contact-icon {
+.contact-nav__link:hover .contact-nav__icon,
+.contact-nav__link:focus .contact-nav__icon {
   fill: currentColor;
 }
 
 /* Секция Hero */
 .hero {
   text-align: center;
-  color: var(--hero-text-color);
+
   max-width: 1600px;
   background-color: var(--hero-bg-color);
   padding-top: 200px;
@@ -210,13 +207,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-.hero-title {
+.hero__title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--hero-text-color);
 
   width: 696px;
   margin-bottom: 30px;
@@ -226,7 +224,7 @@ body {
   /*outline: 1px solid #f11014;*/
 }
 /*Кнопка Заказать услугу */
-.btn-hero {
+.hero__btn {
   font-family: inherit; /*Наследование шрифта через родителя */
   font-weight: 700;
   font-size: 16px;
@@ -248,7 +246,7 @@ body {
 
 /* Задаем цвет тексту секции Особенности */
 
-.feature-list .title {
+.feature__title {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 14px;
@@ -261,14 +259,14 @@ body {
 
 /* Оборачиваем элементы flex контейнер*/
 
-.feature-list {
+.feature__list {
   display: flex;
 }
-.feature-item:not(:last-child) {
+.feature__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.feature-icon {
+.feature__icon {
   display: flex;
   width: 270px;
   height: 120px;
@@ -284,7 +282,7 @@ body {
 .examples {
   padding-top: 0px;
 }
-.examples-title {
+.examples__title {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -295,16 +293,16 @@ body {
 }
 /* Оборачиваем элементы flex контейнер*/
 
-.examples-list {
+.examples__list {
   display: flex;
 }
 
 /* Текст с фоном спозиционирован поверх изображения*/
-.examples-item {
+.examples__item {
   position: relative;
 }
 
-.label-title {
+.examples__text {
   position: absolute;
   width: 370px;
   height: 70px;
@@ -323,7 +321,7 @@ body {
   background: rgba(47, 48, 58, 0.8);
 }
 
-.examples-item:not(:last-child) {
+.examples__item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -332,7 +330,7 @@ body {
 .team {
   background-color: var(--secondary-bg-color);
 }
-.team-title {
+.team__title {
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
@@ -341,7 +339,7 @@ body {
   margin-bottom: 50px;
   /*outline: 1px solid #f11014;*/
 }
-.team-list .title {
+.team__initials {
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -349,23 +347,23 @@ body {
   margin-bottom: 10px;
   /*outline: 1px solid #f11014;*/
 }
-.team-list .text {
+.team__text {
   font-size: 16px;
   line-height: 1.19;
   margin-bottom: 16px;
   /*outline: 1px solid #f11014;*/
 }
-.team-list {
+.team__list {
   display: flex;
   margin-left: -30px;
 }
 
-.team-board {
+.team__board {
   text-align: center;
   padding: 30px;
 }
 
-.team-card {
+.team__card {
   background: #ffffff;
   margin-left: 30px;
 
@@ -375,10 +373,10 @@ body {
 }
 
 /*------Создаем социальные ссылки------*/
-.team-social-list {
+.team-social__list {
   display: flex;
 }
-.team-social-link {
+.team-social__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -394,18 +392,18 @@ body {
 }
 /*------Делаем hover для Соц сетей------*/
 
-.team-social-link:hover,
-.team-social-link:focus {
+.team-social__link:hover,
+.team-social__link:focus {
   background-color: var(--accent-color);
   fill: var(--accent-color-icon);
 }
 
 /*---Второй пример hover---*/
-/*.team-social-icon {
+/*.team-social__icon {
   fill: currentColor;
 }
 
-.team-social-link:hover {
+.team-social__link:hover {
   background-color: var(--accent-color);
   color: var(--accent-color-icon);
 }*/
@@ -413,18 +411,18 @@ body {
 /*---Третий пример hover является самым 
 обширным для решения любых задач---*/
 
-/*.team-social-link:hover {
+/*.team-social__link:hover {
   background-color: var(--accent-color);
 }
-.team-social-link:hover .team-social-icon {
+.team-social__link:hover .team-social__icon {
   fill: var(--accent-color-icon);
 }
-.team-social-icon {
+.team-social__icon {
   fill: var(--color-social-client-icon);
 }*/
 
 /*-----Делаем отступ через селектор соседа-----*/
-.team-social-item + .team-social-item {
+.team-social__item + .team-social__item {
   margin-left: 10px;
 }
 
@@ -492,6 +490,11 @@ body {
   margin-bottom: 20px;
   /*outline: 1px solid #f11014;*/
 }
+
+.footer .logo-span {
+  color: var(--footer-logo-span-color);
+}
+
 .address-street {
   margin-bottom: 9px;
   /*outline: 1px solid #f11014;*/

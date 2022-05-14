@@ -1,0 +1,34 @@
+/*---------- Секция Особенности ---------*/
+
+/* Задаем цвет тексту секции Особенности */
+
+.feature__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  /* outline: 1px solid #f11014;*/
+}
+
+/* Оборачиваем элементы flex контейнер*/
+
+.feature__list {
+  display: flex;
+}
+.feature__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.feature__icon {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  background-color: var(--background-feature-icon);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}

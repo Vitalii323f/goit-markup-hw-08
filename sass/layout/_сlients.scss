@@ -1,0 +1,145 @@
+/*------- Задаем цвет  секции и тексту Наша команда-------*/
+
+.team {
+  background-color: var(--secondary-bg-color);
+}
+.team__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+  /*outline: 1px solid #f11014;*/
+}
+.team__initials {
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+  /*outline: 1px solid #f11014;*/
+}
+.team__text {
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 16px;
+  /*outline: 1px solid #f11014;*/
+}
+.team__list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.team__board {
+  text-align: center;
+  padding: 30px;
+}
+
+.team__card {
+  background: #ffffff;
+  margin-left: 30px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+/*------Создаем социальные ссылки------*/
+.team-social__list {
+  display: flex;
+}
+.team-social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--color-social-client-icon);
+
+  transition-property: background-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+/*------Делаем hover для Соц сетей------*/
+
+.team-social__link:hover,
+.team-social__link:focus {
+  background-color: var(--accent-color);
+  fill: var(--accent-color-icon);
+}
+
+/*---Второй пример hover---*/
+/*.team-social__icon {
+    fill: currentColor;
+  }
+  
+  .team-social__link:hover {
+    background-color: var(--accent-color);
+    color: var(--accent-color-icon);
+  }*/
+
+/*---Третий пример hover является самым 
+  обширным для решения любых задач---*/
+
+/*.team-social__link:hover {
+    background-color: var(--accent-color);
+  }
+  .team-social__link:hover .team-social__icon {
+    fill: var(--accent-color-icon);
+  }
+  .team-social__icon {
+    fill: var(--color-social-client-icon);
+  }*/
+
+/*-----Делаем отступ через селектор соседа-----*/
+.team-social__item + .team-social__item {
+  margin-left: 10px;
+}
+
+/*--------------Секция постоянные клиенты ------------*/
+.сlients-list {
+  display: flex;
+}
+.сlients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+
+  margin-bottom: 50px;
+}
+.сlients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid var(--color-social-client-icon);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--color-social-client-icon);
+
+  transition-property: border-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.сlients-icon {
+  color: var(--color-social-client-icon);
+}
+/*------Делаем hover для Icon------*/
+
+.сlients-link:hover,
+.сlients-link:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.сlients-item + .сlients-item {
+  margin-left: 30px;
+}

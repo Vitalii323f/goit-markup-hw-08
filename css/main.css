@@ -1,0 +1,962 @@
+@charset "UTF-8";
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  /*outline: 1px solid #f11014;*/
+}
+
+.section {
+  padding: 94px 0px;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  width: 100%;
+  border-bottom: 1px solid var(--header-line-color);
+}
+
+/* Задаем цвет логотипа */
+.logo {
+  color: var(--accent-color);
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  text-decoration: none;
+  /* Убираем нижнее подчеркивание ссылок*/
+}
+
+.header__logo {
+  margin-right: 93px;
+}
+
+.logo__text--black {
+  color: var(--title-text-color);
+}
+
+/*Создаем Flex контейнер Header*/
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+}
+
+.site-nav__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Добавляем ссылкам наведение и фокус */
+.site-nav__link {
+  color: var(--title-text-color);
+  padding: 30px 0px;
+  /*Задали padding ,тем самым увеличили кликабельность ссылок*/
+  display: block;
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus {
+  color: var(--accent-color);
+}
+
+.site-nav__link--current {
+  color: var(--accent-color);
+  /* Делает акцент на активную страницу */
+}
+
+/* Сделал нижнее подчеркивание активной страницы*/
+.site-nav__link--current {
+  position: relative;
+}
+
+.site-nav__link--current::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
+.contact-nav {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-nav__link {
+  color: var(--primary-text-color);
+  transition-property: fill, color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.contact-nav__link:hover,
+.contact-nav__link:focus {
+  color: var(--accent-color);
+}
+
+/*Отступы тел и почта двумя способами*/
+.contact-nav__item + .contact-nav__item {
+  margin-left: 50px;
+}
+
+/*.contact-nav-item:not(:last-child) {
+    margin-right: 50px;
+  }*/
+/*---Центрируем иконки конверт и телефон---*/
+.contact-nav__link {
+  display: flex;
+  align-items: center;
+}
+
+/*Задаем цвет иконок конверт и телефон */
+.contact-nav__icon {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+  transition-property: fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/* Иконка наследует цвет ссылки при hover*/
+.contact-nav__link:hover .contact-nav__icon,
+.contact-nav__link:focus .contact-nav__icon {
+  fill: currentColor;
+}
+
+/* Секция Hero */
+.hero {
+  text-align: center;
+  max-width: 1600px;
+  background-color: var(--hero-bg-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero__title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  width: 696px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  /*outline: 1px solid #f11014;*/
+}
+
+/*Кнопка Заказать услугу */
+.hero__btn {
+  font-family: inherit;
+  /*Наследование шрифта через родителя */
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--btn-text-color);
+  min-width: 200px;
+  border-radius: 4px;
+  padding: 10px 32px;
+  border: 0px;
+  /*outline: 1px solid #f11014;*/
+}
+
+/*---------- Секция Особенности ---------*/
+/* Задаем цвет тексту секции Особенности */
+.feature__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  /* outline: 1px solid #f11014;*/
+}
+
+/* Оборачиваем элементы flex контейнер*/
+.feature__list {
+  display: flex;
+}
+
+.feature__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.feature__icon {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  background-color: var(--background-feature-icon);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---------- Задаем цвет тексту секции Чем мы занимаемся ------*/
+.examples {
+  padding-top: 0px;
+}
+
+.examples__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+  /*outline: 1px solid #f11014;*/
+}
+
+/* Оборачиваем элементы flex контейнер*/
+.examples__list {
+  display: flex;
+}
+
+/* Текст с фоном спозиционирован поверх изображения*/
+.examples__item {
+  position: relative;
+}
+
+.examples__text {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 27px 0px;
+  color: var(--hero-text-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.examples__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/*------- Задаем цвет  секции и тексту Наша команда-------*/
+.team {
+  background-color: var(--secondary-bg-color);
+}
+
+.team__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.team__initials {
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.team__text {
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 16px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.team__list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.team__board {
+  text-align: center;
+  padding: 30px;
+}
+
+.team__card {
+  background: #ffffff;
+  margin-left: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+/*------Создаем социальные ссылки------*/
+.team-social__list {
+  display: flex;
+}
+
+.team-social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--color-social-client-icon);
+  transition-property: background-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/*------Делаем hover для Соц сетей------*/
+.team-social__link:hover,
+.team-social__link:focus {
+  background-color: var(--accent-color);
+  fill: var(--accent-color-icon);
+}
+
+/*---Второй пример hover---*/
+/*.team-social__icon {
+    fill: currentColor;
+  }
+
+  .team-social__link:hover {
+    background-color: var(--accent-color);
+    color: var(--accent-color-icon);
+  }*/
+/*---Третий пример hover является самым 
+  обширным для решения любых задач---*/
+/*.team-social__link:hover {
+    background-color: var(--accent-color);
+  }
+  .team-social__link:hover .team-social__icon {
+    fill: var(--accent-color-icon);
+  }
+  .team-social__icon {
+    fill: var(--color-social-client-icon);
+  }*/
+/*-----Делаем отступ через селектор соседа-----*/
+.team-social__item + .team-social__item {
+  margin-left: 10px;
+}
+
+/*--------------Секция постоянные клиенты ------------*/
+.сlients-list {
+  display: flex;
+}
+
+.сlients-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  margin-bottom: 50px;
+}
+
+.сlients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--color-social-client-icon);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--color-social-client-icon);
+  transition-property: border-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.сlients-icon {
+  color: var(--color-social-client-icon);
+}
+
+/*------Делаем hover для Icon------*/
+.сlients-link:hover,
+.сlients-link:focus {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.сlients-item + .сlients-item {
+  margin-left: 30px;
+}
+
+/* -------------------------Секция footer--------------------- */
+.footer .container {
+  display: flex;
+}
+
+.container-address {
+  margin-right: 70px;
+}
+
+.footer {
+  background-color: var(--footer-bg-color);
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 60px 0px;
+}
+
+.logo-footer {
+  margin-left: 0px;
+  margin-bottom: 20px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.footer .logo-span {
+  color: var(--footer-logo-span-color);
+}
+
+.address-street {
+  margin-bottom: 9px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.mail {
+  margin-bottom: 9px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.address-list .street {
+  color: var(--address-text-color);
+}
+
+.address-list .link {
+  color: var(--footer-cont-text-color);
+}
+
+/* Добавляем ссылкам наведение и фокус */
+.address-list .link {
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.address-list .link:hover,
+.address-list .link:focus {
+  color: var(--accent-color);
+}
+
+.link,
+.street {
+  text-decoration: none;
+  /* Убираем нижнее подчеркивание ссылок*/
+}
+
+.address-list {
+  font-style: normal;
+  /* Убираем  курсив в ссылках footer */
+}
+
+/*------Создаем социальные ссылки------*/
+/*------Задаем текст заголовку ------*/
+.footer-social {
+  margin-right: 93px;
+}
+
+.social-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  margin-bottom: 20px;
+  padding-top: 9px;
+}
+
+.footer-social-list {
+  display: flex;
+}
+
+.footer-social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--accent-color-icon);
+  transition-property: background-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/*------Делаем hover для Соц сетей------*/
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--accent-color);
+}
+
+/*-----Делаем отступ через селектор соседа-----*/
+.footer-social-item + .footer-social-item {
+  margin-left: 10px;
+}
+
+/*-----Подписка на рассылку------*/
+.subscribe {
+  width: 100%;
+}
+
+.subscribe-item {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.subscribe-form {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe-input {
+  width: 358px;
+  height: 50px;
+  padding-left: 15px;
+  color: var(--hero-text-color);
+  outline: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+  transition-property: border-color, color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.subscribe-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.subscribe-input:focus,
+.subscribe-input:focus::placeholder {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.subscribe-send {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 50px;
+  padding: 10px 28px;
+  margin-left: 12px;
+  background-color: var(--btn-accent-color);
+  border: none;
+  border-radius: 4px;
+  /*outline: none;*/
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  color: var(--btn-text-color);
+}
+
+.subscribe-icon {
+  position: absolute;
+  right: 28px;
+  top: 13px;
+  margin-left: 10px;
+}
+
+/*.subscribe-send:focus {
+
+  }*/
+/*------ Создаем backdrop и модальное окно ------*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition-property: opacity, visibility;
+  transition-duration: 1500ms;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  transition-property: rotate(0deg) scale(1);
+  transition-duration: 1000ms;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition-property: fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--accent-color);
+}
+
+.modal-close-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .modal {
+  transform: rotateY(-180deg) scale(0.1);
+  transition-duration: 1000ms;
+}
+
+/*-----Заглавие модального окна-----*/
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  color: var(--title-text-color);
+}
+
+.modal-filed {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+}
+
+.modal-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  transition-property: border-color, fill;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.modal-input:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+
+/*-----Ориентируем иконки в Input-----*/
+.modal-input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-text-filed {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+}
+
+.modal-text {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  cursor: pointer;
+  transition-property: border-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.modal-text::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-text:focus {
+  border-color: var(--accent-color);
+}
+
+/*-----Создаем  check-box-----*/
+.modal-check-filed {
+  margin-bottom: 30px;
+}
+
+.check-text {
+  display: flex;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.check-text::before {
+  content: "";
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 3px;
+  margin-right: 9px;
+  transition-property: background-color, background-image;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.input-check:checked + .check-text::before {
+  background-image: url(../images/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.link-policy {
+  color: var(--accent-color);
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition-property: border-color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.link-policy:focus {
+  border-color: var(--accent-color);
+}
+
+.button-send {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: var(--color-modal-button);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--btn-text-color);
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.button-send:hover,
+.button-send:focus {
+  background-color: var(--btn-accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/*-------------------- Страница портфолио -----------------*/
+/* Убираем точки в списках */
+.button-list {
+  display: flex;
+  list-style: none;
+  margin-bottom: 50px;
+}
+
+.project {
+  list-style: none;
+}
+
+/* Кнопки фильтра ,задаем цвет и свойства */
+.btn-filter {
+  font-family: inherit;
+  /*Наследование шрифта через родителя */
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background-color: var(--btn-primary-color);
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: 0px;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  /* outline: 1px solid #f11014;*/
+}
+
+.btn-filter:hover,
+.btn-filter:focus {
+  background-color: var(--btn-accent-color);
+  color: var(--btn-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.button-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.button-item:last-child {
+  margin-right: auto;
+}
+
+.button-item:first-child {
+  margin-left: auto;
+}
+
+/* Задаем цвет тексту */
+.project .title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--title-text-color);
+  margin-bottom: 4px;
+  /*outline: 1px solid #f11014;*/
+}
+
+.project .text {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--primary-text-color);
+  /*outline: 1px solid #f11014;*/
+}
+
+/*Делаем рамку внизу карточки портфолио*/
+.border {
+  padding: 20px 24px;
+  border-right: 1px solid var(--color-border-portfolio);
+  border-left: 1px solid var(--color-border-portfolio);
+  border-bottom: 1px solid var(--color-border-portfolio);
+  width: 370px;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  /*gap: 30px;*/
+}
+
+.project-item {
+  /*flex-basis: calc((100% - 90px) / 3);*/
+  flex-basis: calc(33.3333333333% - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.project-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(101%);
+  transition-property: transform;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  color: var(--hero-text-color);
+  padding: 63px 24px;
+  background: rgba(33, 150, 243, 0.9);
+}
+
+/* Делаем тень и вызываем оверлей с 
+  текстом  при hover  */
+.project-item:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.project-item:hover .description {
+  transform: translateY(0);
+}/*# sourceMappingURL=main.css.map */
