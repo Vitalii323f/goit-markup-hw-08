@@ -1,6 +1,7 @@
 /* -------------------------Секция footer--------------------- */
 
 .container-address {
+  flex-grow: 1;
   margin-right: 70px;
 }
 .footer {
@@ -10,6 +11,7 @@
   padding: 60px 0px;
   & .container {
     display: flex;
+    align-items: baseline;
   }
 }
 
@@ -43,7 +45,9 @@
 
 /*-----Подписка на рассылку------*/
 .subscribe {
-  width: 100%;
+  display: block;
+  width: 570px;
+
   &-item {
     font-weight: 700;
     font-size: 14px;
@@ -52,7 +56,6 @@
     text-transform: uppercase;
     color: var(--hero-text-color);
 
-    padding-top: 10px;
     margin-bottom: 20px;
   }
   &-form {
