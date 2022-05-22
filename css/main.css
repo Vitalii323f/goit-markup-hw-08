@@ -98,17 +98,45 @@ img {
 }
 
 .container {
-  width: 1200px;
+  /*width: 1200px;*/
+  /*width: 100%;*/
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  /*outline: 1px solid #f11014;*/
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
-.section {
+/*.section {
   padding: 94px 0px;
+}*/
+.section {
+  padding: 60px 0;
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding: 94px 0px;
+  }
 }
 
+/*@media screen and (min-width: 1200px) {
+  .section {
+    padding: 94px 0px;
+  }
+}*/
 body {
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
@@ -627,6 +655,170 @@ body {
 
 /*---------- Секция Особенности ---------*/
 /* Задаем цвет тексту секции Особенности */
+.feature__list {
+  display: block;
+  /*@media screen and(min-width: 480px) {
+    .feature__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    .feature__icon {
+      display: flex;
+      width: 450px;
+      height: 120px;
+      background-color: var(--background-feature-icon);
+      border-radius: 4px;
+      margin-bottom: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+  }*/
+}
+@media screen and (min-width: 768px) {
+  .feature__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .feature__list {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -30px;
+  }
+}
+
+.feature__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .feature__item:nth-child(n+3) {
+    margin-bottom: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .feature__item {
+    flex-basis: calc(50% - 30px);
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .feature__item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.feature__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .feature__title {
+    text-align: left;
+  }
+}
+
+.feature__icon {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background-color: var(--background-feature-icon);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/*@media screen and(min-width: 480px) {
+  .feature__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .feature__icon {
+    display: flex;
+    width: 450px;
+    height: 120px;
+    background-color: var(--background-feature-icon);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .feature__title {
+    text-align: left;
+  }
+  .feature__item {
+    margin-right: 30px;
+  }
+  .feature__item:nth-child(n + 3) {
+    margin-bottom: 0px;
+  }
+  .feature__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+  }
+  .feature__item {
+    flex-basis: calc(100% / 2 - 30px);
+  }
+  .feature__icon {
+    display: flex;
+
+    width: 354px;
+    height: 120px;
+    background-color: var(--background-feature-icon);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feature__list {
+    display: flex;
+  }
+
+  .feature__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .feature__title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .feature__icon {
+    display: flex;
+    width: 270px;
+    height: 120px;
+    background-color: var(--background-feature-icon);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}*/
+/*.feature__list {
+  display: flex;
+}*/
+/*.feature__item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .feature__title {
   color: var(--title-text-color);
   font-weight: 700;
@@ -635,16 +827,7 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 10px;
-  /* outline: 1px solid #f11014;*/
-}
 
-/* Оборачиваем элементы flex контейнер*/
-.feature__list {
-  display: flex;
-}
-
-.feature__item:not(:last-child) {
-  margin-right: 30px;
 }
 
 .feature__icon {
@@ -656,8 +839,7 @@ body {
   margin-bottom: 30px;
   justify-content: center;
   align-items: center;
-}
-
+}*/
 /*---------- Задаем цвет тексту секции Чем мы занимаемся ------*/
 .examples {
   padding-top: 0px;
@@ -723,8 +905,7 @@ body {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  margin-bottom: 50px;
-  /*outline: 1px solid #f11014;*/
+  margin-bottom: 30px;
 }
 
 .team__initials {
@@ -733,16 +914,47 @@ body {
   font-size: 16px;
   line-height: 1.19;
   margin-bottom: 10px;
-  /*outline: 1px solid #f11014;*/
 }
 
 .team__text {
   font-size: 16px;
   line-height: 1.19;
   margin-bottom: 16px;
-  /*outline: 1px solid #f11014;*/
 }
 
+.team__board {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 24px;
+}
+
+.team__card {
+  background: #ffffff;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+/*.team__title {
+  color: var(--title-text-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team__initials {
+  color: var(--title-text-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+}
+.team__text {
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 16px;
+}
 .team__list {
   display: flex;
   margin-left: -30px;
@@ -756,10 +968,11 @@ body {
 .team__card {
   background: #ffffff;
   margin-left: 30px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-}
 
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}*/
 /*--------------Секция постоянные клиенты ------------*/
 .сlients-list {
   display: flex;
