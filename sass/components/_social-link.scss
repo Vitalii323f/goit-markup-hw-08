@@ -1,6 +1,7 @@
 /*------Создаем социальные ссылки команды------*/
 .team-social__list {
   display: flex;
+  justify-content: center;
 }
 .team-social__link {
   display: flex;
