@@ -1230,9 +1230,14 @@ body {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  text-align: center;
+  /*text-align: center;*/
   color: var(--hero-text-color);
   margin-bottom: 20px;
+}
+@media screen and (max-width: 1199.9px) {
+  .subscribe-item-item {
+    text-align: center;
+  }
 }
 .subscribe-input {
   width: 100%;
