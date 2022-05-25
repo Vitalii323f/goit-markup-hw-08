@@ -30,22 +30,34 @@
 
 /*------Создаем социальные ссылки footer------*/
 
-.footer-social {
-  margin-right: 93px;
-}
 .social-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--hero-text-color);
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 1199.9px) {
+  .footer-social {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-social {
+    margin-right: 93px;
+  }
+}
+
 .footer-social-list {
   display: flex;
+  justify-content: center;
 }
+
 .footer-social-link {
   width: 44px;
   height: 44px;
