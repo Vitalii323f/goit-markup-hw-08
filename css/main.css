@@ -191,13 +191,34 @@ body {
   border-radius: 4px;
   padding: 10px 32px;
   border: 0px;
-  /*outline: 1px solid #f11014;*/
 }
 
 /* Кнопки фильтра портфолио*/
 .button-list {
   display: flex;
-  margin-bottom: 50px;
+}
+@media screen and (max-width: 400px) {
+  .button-list {
+    display: block;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767.9px) {
+  .button-list {
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .button-list {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .button-list {
+    margin-bottom: 50px;
+  }
 }
 
 /* Кнопки фильтра ,задаем цвет и свойства */
@@ -223,6 +244,49 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+@media screen and (max-width: 767.9px) {
+  .button-item {
+    margin-bottom: 15px;
+  }
+}
+
+.button-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+/*.button-list {
+  display: flex;
+
+  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+
+
+.btn-filter {
+  font-family: inherit; 
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  background-color: var(--btn-primary-color);
+
+  padding: 6px 22px;
+  border-radius: 4px;
+  border: 0px;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  &:hover,
+  &:focus {
+    background-color: var(--btn-accent-color);
+    color: var(--btn-text-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
 .button-item:not(:last-child) {
   margin-right: 8px;
 }
@@ -233,8 +297,7 @@ body {
 
 .button-item:first-child {
   margin-left: auto;
-}
-
+}*/
 .project-overlay {
   position: relative;
   overflow: hidden;
@@ -1479,22 +1542,42 @@ body {
   border-right: 1px solid var(--color-border-portfolio);
   border-left: 1px solid var(--color-border-portfolio);
   border-bottom: 1px solid var(--color-border-portfolio);
-  width: 370px;
+  width: 100%;
+  /*width: 370px;*/
 }
 
 .project {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .project {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 .project-item {
-  flex-basis: calc(33.3333333333% - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
   transition-property: box-shadow;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
+}
+@media screen and (min-width: 768px) {
+  .project-item {
+    flex-basis: calc(50% - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .project-item {
+    flex-basis: calc(33.3333333333% - 30px);
+  }
+}
+@media screen and (max-width: 767.9px) {
+  .project-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 .project-item:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1514,4 +1597,48 @@ body {
   font-size: 16px;
   line-height: 1.9;
   color: var(--primary-text-color);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*.border {
+  padding: 20px 24px;
+  border-right: 1px solid var(--color-border-portfolio);
+  border-left: 1px solid var(--color-border-portfolio);
+  border-bottom: 1px solid var(--color-border-portfolio);
+  width: 370px;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  &-item {
+    flex-basis: calc(100% / 3 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+
+    transition-property: box-shadow;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+  }
+  &-item:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  &-item:hover .description {
+    transform: translateY(0);
+  }
+  & .title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--title-text-color);
+
+    margin-bottom: 4px;
+  }
+  & .text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--primary-text-color);
+  }
+}*//*# sourceMappingURL=main.css.map */
