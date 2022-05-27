@@ -10,7 +10,11 @@
   width: 100%;
   /*width: 370px;*/
 }
-
+@media screen and(min-width:768px) and (max-width: 1199.9px) {
+  .border-tablet {
+    padding-bottom: 56px;
+  }
+}
 .project {
   display: block;
 
