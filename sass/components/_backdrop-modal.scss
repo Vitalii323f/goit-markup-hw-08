@@ -8,6 +8,7 @@
   background-color: rgba(0, 0, 0, 0.2);
   transition-property: opacity, visibility;
   transition-duration: 1500ms;
+  overflow-y: scroll;
 }
 
 .modal {
@@ -26,6 +27,7 @@
   transform: translate(-50%, -50%);
   transition-property: rotate(0deg) scale(1);
   transition-duration: 1000ms;
+
   @media screen and(min-width:480px) {
     width: 450px;
     height: 609px;

@@ -161,10 +161,14 @@ body {
   /* Убираем нижнее подчеркивание ссылок*/
 }
 
-.header__logo {
-  margin-right: 93px;
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 93px;
+  }
 }
-
+/*.header__logo {
+  margin-right: 93px;
+}*/
 .logo__text--black {
   color: var(--title-text-color);
 }
@@ -172,7 +176,6 @@ body {
 .logo-footer {
   margin-left: 0px;
   margin-bottom: 20px;
-  /*outline: 1px solid #f11014;*/
 }
 
 .footer .logo-span {
@@ -258,6 +261,63 @@ body {
   margin-right: 8px;
 }
 
+.menu-button {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+.menu-button:hover, .menu-button:focus {
+  fill: var(--btn-accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+}
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: var(--primary-bg-color);
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in-out;
+}
+.menu-container.is-open {
+  transform: translateY(0);
+}
+.menu-container .menu-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.mobile-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*.menu-container.is-open {
+  transform: translateX(0);
+}*/
+/*.menu-container .menu-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}*/
 /*.button-list {
   display: flex;
 
@@ -415,6 +475,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   transition-property: opacity, visibility;
   transition-duration: 1500ms;
+  overflow-y: scroll;
 }
 
 .modal {
@@ -888,11 +949,6 @@ body {
   align-items: center;
 }
 
-/*Создаем Flex контейнер Header*/
-/*.header .container {
-  display: flex;
-  align-items: center;
-}*/
 .site-nav {
   display: flex;
 }

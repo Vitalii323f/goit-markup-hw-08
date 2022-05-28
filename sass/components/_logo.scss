@@ -7,9 +7,16 @@
   line-height: 1.19;
   text-decoration: none; /* Убираем нижнее подчеркивание ссылок*/
 }
-.header__logo {
-  margin-right: 93px;
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 93px;
+  }
 }
+
+/*.header__logo {
+  margin-right: 93px;
+}*/
 
 .logo__text--black {
   color: var(--title-text-color);
@@ -18,7 +25,6 @@
 .logo-footer {
   margin-left: 0px;
   margin-bottom: 20px;
-  /*outline: 1px solid #f11014;*/
 }
 
 .footer .logo-span {

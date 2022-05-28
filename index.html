@@ -29,6 +29,19 @@
         <a href="./index.html" class="logo header__logo"
           >Web<span class="logo__text--black">Studio</span></a
         >
+        <button
+          type="button"
+          class="menu-button js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg width="24px" height="16px" area-label=" Переключатель мобильного меню">
+            <use class="icon-menu" href="./images/icons.svg#icon-menu-mobile"></use>
+
+            <!--<use class="icon-cross" href="./images/icons.svg#icon-close-mobile"></use>-->
+          </svg>
+        </button>
+
         <nav>
           <ul class="site-nav list">
             <li class="site-nav__item">
@@ -60,6 +73,21 @@
               +38-096-111-11-11
             </a>
           </li>
+        </ul>
+      </div>
+      <!--Мобильное меню -->
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <button type="button" class="menu-button js-close-menu">
+          <svg width="19px" height="19px" area-label="Закрыть мобильное меню">
+            <use class="icon-cross" href="./images/icons.svg#icon-close-mobile"></use>
+          </svg>
+        </button>
+
+        <ul class="mobile-menu">
+          <li><a href="" class="link">О нас</a></li>
+          <li><a href="" class="link">Работы</a></li>
+          <li><a href="" class="link">Контакты</a></li>
+          <li><a href="" class="link">Карьера</a></li>
         </ul>
       </div>
     </header>
@@ -528,5 +556,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
