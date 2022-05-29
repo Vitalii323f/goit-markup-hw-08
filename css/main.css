@@ -72,6 +72,8 @@ button {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .list {
@@ -897,7 +899,6 @@ body {
   padding: 0;
   background-color: transparent;
   border: none;
-  border-radius: 50%;
   outline: none;
 }
 .menu-button:hover, .menu-button:focus {
@@ -1001,7 +1002,7 @@ body {
 }
 @media screen and (max-width: 390px) {
   .mobile-social {
-    display: inline-block;
+    display: block;
   }
 }
 
