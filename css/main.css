@@ -984,6 +984,11 @@ body {
 .mobile-contact-item .tel {
   color: var(--accent-color);
 }
+@media screen and (max-width: 336.9px) {
+  .mobile-contact-item .tel {
+    font-size: 31px;
+  }
+}
 
 .mobile-contact-link {
   color: inherit;
@@ -996,21 +1001,26 @@ body {
   padding-right: 10px;
   color: #2196f3;
 }
+@media screen and (max-width: 390px) {
+  .mobile-social-link {
+    font-size: 14px;
+  }
+}
 
 .mobile-social {
   display: flex;
-}
-@media screen and (max-width: 390px) {
-  .mobile-social {
+  /*@media screen and(max-width:390px) {
     display: block;
-  }
+  }*/
 }
 
-@media screen and (min-width: 390px) {
-  .mobile-social-item:not(:last-child) {
+.mobile-social-item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  margin-right: 10px;
+  /*@media screen and(min-width:390px) {
     border-right: 1px solid rgba(33, 33, 33, 0.2);
     margin-right: 10px;
-  }
+  }*/
 }
 @media screen and (max-width: 389.9px) {
   .mobile-social-item:not(:last-child) {
@@ -1024,11 +1034,20 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   width: 100%;
-  border-bottom: 1px solid var(--header-line-color);
 }
 .header .container {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 767.9px) {
+  .header .container {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    border-bottom: 1px solid var(--header-line-color);
+  }
 }
 
 .site-nav {
@@ -1338,6 +1357,11 @@ body {
   }
 }
 @media screen and (min-width: 1200px) {
+  .feature__item {
+    width: 270px;
+  }
+}
+@media screen and (min-width: 1200px) {
   .feature__item:not(:last-child) {
     margin-right: 30px;
   }
@@ -1542,13 +1566,15 @@ body {
 .team__title {
   color: var(--title-text-color);
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   margin-bottom: 30px;
 }
 @media screen and (min-width: 1200px) {
   .team__title {
+    font-size: 36px;
+    line-height: 1.17;
     margin-bottom: 50px;
   }
 }
@@ -1648,12 +1674,18 @@ body {
 /*--------------Секция постоянные клиенты ------------*/
 .сlients-title {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   margin-bottom: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .сlients-title {
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 
 .сlients-list {
@@ -2073,9 +2105,20 @@ body {
   /*width: 370px;*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199.9px) {
+/*@media screen and(min-width:768px) and (max-width: 1199.9px) {
   .border-tablet {
     padding-bottom: 56px;
+  }
+}*/
+@media screen and (min-width: 768px) and (max-width: 1199.9px) {
+  .tab-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .border-tablet {
+    flex-grow: 1;
   }
 }
 .project {

@@ -5,10 +5,17 @@
   letter-spacing: 0.02em;
 
   width: 100%;
-  border-bottom: 1px solid var(--header-line-color);
+
   & .container {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 767.9px) {
+      height: 60px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    border-bottom: 1px solid var(--header-line-color);
   }
 }
 
