@@ -1038,10 +1038,11 @@ body {
 .header .container {
   display: flex;
   align-items: center;
+  height: 60px;
 }
-@media screen and (max-width: 767.9px) {
+@media screen and (min-width: 768px) {
   .header .container {
-    height: 60px;
+    height: 80px;
   }
 }
 @media screen and (min-width: 768px) {
