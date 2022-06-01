@@ -334,8 +334,24 @@ body {
   line-height: 1.6;
   letter-spacing: 0.03em;
   color: var(--hero-text-color);
-  padding: 63px 24px;
+  /*padding: 63px 24px;*/
+  padding-top: 77px;
+  padding-bottom: 77px;
+  padding-right: 24px;
+  padding-left: 24px;
   background: rgba(33, 150, 243, 0.9);
+}
+@media screen and (min-width: 768px) and (max-width: 1199.9px) {
+  .description {
+    padding-top: 49px;
+    padding-bottom: 77px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .description {
+    padding-top: 63px;
+    padding-bottom: 63px;
+  }
 }
 
 /*------Создаем социальные ссылки команды------*/
